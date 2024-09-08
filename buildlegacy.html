@@ -5,11 +5,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Wax4Web</title>
-    <link rel="icon" href="/icon.png" />
-    <link rel="stylesheet" href="/main.css" />
-    <script src="/script.js" defer></script>
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="main.css" />
+    <script src="script.js" defer></script>
 
-    <script src="/wax4web/libv86.js"></script>
+    <script src="wax4web/libv86.js"></script>
     <script>
         const $ = _ => document.querySelector(_);
 
@@ -35,21 +35,21 @@
         }
         function startVM() {
             var emulator = window.emulator = new V86Starter({
-                wasm_path: "/wax4web/v86.wasm",
+                wasm_path: "wax4web/v86.wasm",
                 memory_size: 512 * 1024 * 1024,
                 vga_memory_size: 2 * 1024 * 1024,
                 screen_container: $("#screen_container"),
                 bios: {
-                    url: "/wax4web/seabios.bin",
+                    url: "wax4web/seabios.bin",
                 },
                 vga_bios: {
-                    url: "/wax4web/vgabios.bin",
+                    url: "wax4web/vgabios.bin",
                 },
                 bzimage: {
-                    url: "/wax4web/bzImage"
+                    url: "wax4web/bzImage"
                 },
                 initrd: {
-                    url: "/wax4web/legacy"
+                    url: "wax4web/legacy"
                 },
                 hda: {
                     buffer: document.all.hd_image.files[0]
@@ -94,7 +94,7 @@
         </p>
         <p>
             Next you need a raw RMA shim for that board name. There should be one corresponding to your board <a
-                href="https://shim.the-repo.org/">here</a> but if not you'll have to source them on your own..
+                href="https://dl.darkn.bio/SH1mmer">here</a> but if not you'll have to source them on your own..
             somehow.
         </p>
         <p>
@@ -140,7 +140,6 @@
 </body>
 <style>
     #displaycontainer {
-        /* background-color: var(--light); */
         padding: 3em;
         border-radius: 10px;
     }
@@ -206,7 +205,6 @@
     }
 
     textarea {
-        /* no clue why but it wont work if its mixed with other elements */
         background-color: black;
     }
 
